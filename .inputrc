@@ -1,0 +1,10 @@
+
+# .inputrc
+#
+#
+#
+
+# Tab Completions ==============================================================
+
+# Make tab autocomplete regardless of filename case
+set completion-ignore-case on
