@@ -6,15 +6,15 @@ module.exports = {
 
 	config: {
 
-		// # Application Settings ==============================================
+		// # Application Settings
 
 		// choose either "stable" for receiving highly polished, or "canary" for less polished but more frequent updates
 		updateChannel: 'stable',
 
 
-		// # UI ================================================================
+		// # UI
 
-		// ## UI: Text ---------------------------------------------------------
+		// ## UI: Text
 
 		// default font size in pixels for all tabs
 		fontSize: 12,
@@ -31,7 +31,7 @@ module.exports = {
 		// set to true for blinking cursor
 		cursorBlink: true,
 
-		// ## UI: Default Colors -----------------------------------------------
+		// ## UI: Default Colors
 
 		// color of the text
 		foregroundColor: '#fff',
@@ -65,7 +65,7 @@ module.exports = {
 			lightWhite: '#ffffff'
 		},
 
-		// ## UI: Window -------------------------------------------------------
+		// ## UI: Window
 
 		// custom css to embed in the main window
 		css: '',
@@ -93,7 +93,7 @@ module.exports = {
 		padding: '12px 14px',
 
 
-		// # Shell =============================================================
+		// # Shell
 
 		// the shell to run when spawning a new session (i.e. /usr/local/bin/fish) if left empty, your system's login shell will be used by default
 		//
@@ -115,7 +115,7 @@ module.exports = {
 		env: {},
 
 
-		// # Behavior ==========================================================
+		// # Behavior
 
 		// set to false for no bell
 		bell: 'SOUND',
@@ -132,14 +132,14 @@ module.exports = {
 		// for advanced config flags please refer to https://hyper.is/#cfg
 
 
-		// # Theme Settings ====================================================
+		// # Theme Settings
 
-		// ## Theme Settings: Light Themes -------------------------------------
+		// ## Theme Settings: Light Themes
 
 		// hyper-one-light
 		enableVibrancy: true,    // enable the light vibrancy effect:
 
-		// ## Theme Settings: Dark Themes --------------------------------------
+		// ## Theme Settings: Dark Themes
 
 		// an-old-hype
 		themeSettings: {
@@ -148,9 +148,9 @@ module.exports = {
 			tabActiveMarker: '⌘', // change the character that mars a tab active
 		},
 
-		// # Package Settings ==================================================
+		// # Package Settings
 
-		// ## Package Settings: Behavior ---------------------------------------
+		// ## Package Settings: Behavior
 
 		// hypercwd
 		hypercwd: {
@@ -233,9 +233,9 @@ module.exports = {
 		// include bash commands to be executed on startup
 		// commands: ['echo first command', 'echo second command']
 
-		// ## Package Settings: UI ---------------------------------------------
+		// ## Package Settings: UI
 
-		// ### Package Settings: UI: Tabs --------------------------------------
+		// ### Package Settings: UI: Tabs
 
 		// hyper-tab-icons
 		tabIcons: {
@@ -258,8 +258,9 @@ module.exports = {
 			// map of process name to color string. see repo for defaults
 			mapColors: {
 				// examples:
-				// shell: '#000',
+				shell: '#000',
 				// bash: 'rgb(34, 44, 47)',
+				python: '#F00',
 			},
 			// toggles icon colors. inherits color from current CSS applied to tab text magically.
 			// default: `false`
@@ -292,11 +293,11 @@ module.exports = {
 			activityPulse: false,    // enable activity pulse. default: `true`
 		},
 
-		// ### Package Settings: UI: Text --------------------------------------
+		// ### Package Settings: UI: Text
 
 
 
-		// ### Package Settings: UI: Visor -------------------------------------
+		// ### Package Settings: UI: Visor
 
 		// hyperterm-overlay
 		overlay: {
@@ -332,7 +333,7 @@ module.exports = {
 			hotkey: 'Control+Option+Command+Space', // shortcut to toggle Hyper window visibility. default: `Ctrl+;`
 		},
 
-		// ### Package Settings: UI: Window ------------------------------------
+		// ### Package Settings: UI: Window
 
 		// hyper-always-on-top
 		alwaysOnTop: {
@@ -354,7 +355,7 @@ module.exports = {
 	},
 
 
-	// # Plugins ===============================================================
+	// # Plugins
 
 	// a list of plugins to fetch and install from npm
 	// format: [@org/]project[#version]
@@ -365,9 +366,9 @@ module.exports = {
 
 	plugins: [
 
-		// ## Plugins: Themes --------------------------------------------------
+		// ## Plugins: Themes
 
-		// ### Plugins: Themes: Light Themes -----------------------------------
+		// ### Plugins: Themes: Light Themes
 
 		// 'hyperterm-candy',
 		// delicious light theme with candy colors for Hyper.
@@ -401,7 +402,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyper-one-light
 
-		// ### Plugins: Themes: Dark Themes ------------------------------------
+		// ### Plugins: Themes: Dark Themes
 
 		// 'an-old-hype',
 		// “Hyper theme inspired by a galaxy far far away... based on An Old Hope - a splendid atom syntax theme by Jesse Leite”
@@ -436,7 +437,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyper-firenokai
 
-		// ## Plugins: Behavior ------------------------------------------------
+		// ## Plugins: Behavior
 
 		'hypercwd',
 		// opens new tabs with the same directory as the current tab in Hyper for OS X, Linux and Windows.
@@ -518,13 +519,13 @@ module.exports = {
 		// log all actions from hyperterm in the dev console
 		// https://www.npmjs.com/package/hyper-log-actions
 
-		// ## Plugins: Files ---------------------------------------------------
+		// ## Plugins: Files
 
 		'hyper-markdown-preview',
 		// a plugin to preview markdown files in your Hyper term.
 		// https://www.npmjs.com/package/hyper-markdown-preview
 
-		// ## Plugins: Integrations --------------------------------------------
+		// ## Plugins: Integrations
 
 		'hyperwakatime',
 		// hyperterm plugin for Wakatime
@@ -534,9 +535,9 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyperwakatime
 
-		// ## Plugins: UI ------------------------------------------------------
+		// ## Plugins: UI
 
-		// ### Plugins: UI: Background -----------------------------------------
+		// ### Plugins: UI: Background
 
 		// 'hyper-transparent',
 		// Hyper plugin to easily set window transparency and vibrancy.
@@ -554,13 +555,13 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyper-transparent-dynamic
 
-		// ### Plugins: UI: Menus ----------------------------------------------
+		// ### Plugins: UI: Menus
 
 		'hyper-always-on-top',
 		// extension for Hyper.app to add a menu item to keep application windows always on top.
 		// https://www.npmjs.com/package/hyper-always-on-top
 
-		// ### Plguins: UI: Tabs -----------------------------------------------
+		// ### Plguins: UI: Tabs
 
 		// 'hyperterm-close-on-left',
 		// places the close button on the left of the tabs for themes that don't default to it
@@ -571,7 +572,7 @@ module.exports = {
 		// this plugin is intended to be compatible with other themes and will attempt to override any tab styles implemented by other plugins.
 		// https://www.npmjs.com/package/hyperterm-mactabs
 
-		// 'hyper-tabs-enhanced',
+		'hyper-tabs-enhanced',
 		// enhanced tabs plugin for Hyper. matches any theme.
 		// https://www.npmjs.com/package/hyper-tabs-enhanced
 
@@ -579,7 +580,7 @@ module.exports = {
 		// icons in the header tabs for the current running process in Hyper.
 		// https://www.npmjs.com/package/hyper-tab-icons
 
-		// ### Plugins: UI: Text -----------------------------------------------
+		// ### Plugins: UI: Text
 
 		'hyper-font-smoothing',
 		// extension for subpixel-antialiased font smoothing in hyper
@@ -589,7 +590,7 @@ module.exports = {
 		// this is just a simple addon for Hyper to remove bold text from terminal output.
 		// https://www.npmjs.com/package/hyper-nobold
 
-		// ### Plugins: UI: Visor ----------------------------------------------
+		// ### Plugins: UI: Visor
 
 		// visor notes:
 		// These two packages conflict with each other and should not be used simultaneously.
@@ -603,7 +604,7 @@ module.exports = {
 		// summon your hyper windows with a system-wide hotkey.
 		// https://www.npmjs.com/package/hyperterm-summon
 
-		// ### Plugins: UI: Window ---------------------------------------------
+		// ### Plugins: UI: Window
 
 		// 'hyper-simple-highlight-active-session',
 		// dims panes not currently in focus
@@ -625,16 +626,16 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyper-vsplit-fix
 
-		// ## Plugins: Overrides -----------------------------------------------
+		// ## Plugins: Overrides
 
 	],
 
-	// # Local Plugins ===========================================================
+	// # Local Plugins
 
 	// in development, you can create a directory under `~/.hyper_plugins/local/` and include it here to load it and avoid it being `npm install`ed
 	localPlugins: [],
 
-	// # Keymaps =================================================================
+	// # Keymaps
 
 	keymaps: {
 		// Example

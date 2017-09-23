@@ -1,10 +1,10 @@
 
-# Command Aliases
-#
-# Quick shortcuts to longer, more complicated or difficult to type commands.
-#
+# | # Command Aliases
+# |
+# | Quick shortcuts to longer, more complicated or difficult to type commands.
+# |
 
-# General ======================================================================
+# | # General
 
 alias l="ls -la"       # List in long format, include dotfiles
 alias ld="ls -ld */"   # List in long format, only directories
