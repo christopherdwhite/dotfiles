@@ -240,9 +240,11 @@ module.exports = {
 		// hyper-tab-icons
 		tabIcons: {
 			activeStyle: {
-				// this object can be any CSSStyleDeclaration allowed.
-				// default: `opacity 200ms ease-in`
+				display: 'inline-block',
+				marginRight: '0.25rem',
 				transition: 'opacity 200ms ease-in',
+				verticalAlign: 'middle',
+				width: '1rem',
 			},
 			// this object can be any CSSStyleDeclaration allowed.
 			inactiveStyle: {
@@ -576,7 +578,7 @@ module.exports = {
 		// enhanced tabs plugin for Hyper. matches any theme.
 		// https://www.npmjs.com/package/hyper-tabs-enhanced
 
-		// 'hyper-tab-icons',
+		'hyper-tab-icons',
 		// icons in the header tabs for the current running process in Hyper.
 		// https://www.npmjs.com/package/hyper-tab-icons
 

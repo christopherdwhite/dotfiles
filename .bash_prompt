@@ -1,19 +1,26 @@
 #!/usr/bin/env bash
 
-# # bash prompt
+# # Bash Prompt
 #
-# this configuration is heavily inspired, or in parts, forked from Mathias Bynems' exceptional prompt
+# My customized BASH prompt and terminal tile configuration.
+#
+# This configuration is heavily inspired and — in parts copied — from Mathias Bynems' exceptional dotfiles.
 # https://github.com/mathiasbynens/dotfiles/blob/master/.bash_prompt
 #
-
-# # colors & style
+# The title is adapted from Alexei Chekulaev's variation on David Parshley's original title.
+# Alexei: https://github.com/zeit/hyper/issues/1188#issuecomment-312103573
+# David:  http://www.davidpashley.com/articles/xterm-titles-with-bash/
 #
-# define the colors and style as both tput commands and ANSI escape codes for most compatibility.
-# unused colors are commented to prevent ShellCheck warnings but are kept for possible expansions in the future.
-#
-if tput setaf 1 &> /dev/null; then # if tput commands are supported
 
-	# color
+# # Colors and Text Styling
+#
+# Defines the colors and text styles used in the prompt in both tput command syntax as well as ANSI escape codes for compatibility.
+# Additional colors have been created for later customization but have been commented where unused.
+#
+if tput setaf 1 &> /dev/null; then # check if tput commands are supported.
+
+	# ## Colors
+
 	foreground=$(tput setaf 0);
 	# black=$(tput setaf 0);
 	# gray=$(tput setaf 244);
@@ -35,13 +42,15 @@ if tput setaf 1 &> /dev/null; then # if tput commands are supported
 	orange=$(tput setaf 130);
 	# orangeBright=$(tput setaf 208);
 
-	# style
+	# ## Text Styles
+
 	bold=$(tput bold);
 	reset=$(tput sgr0);
 
-else # otherwise use ANSI escape codes
+else # Otherwise use ANSI escape codes.
 
-	# color
+	# ## Colors
+
 	foreground="\e[39m"
 	# black="\e[38;5;0m"
 	# gray="\e[38;5;244m"
@@ -63,39 +72,59 @@ else # otherwise use ANSI escape codes
 	orange="\e[38;5;130m"
 	# orangeBright="\e[38;5;208m"
 
-	# style
+	# ## Text Styles
+
 	bold="\e[1m";
 	reset="\e[0m";
 
 fi;
 
 
-# # title
+# # Title
 #
-# The text that will be used for the terminal/tab title
+# The terminal window/tab title is set automatically based on the working directory and the active command (such as `bash` or `python`) when active.
 #
+# The title can also be manually overwritten by issuing the command `title A new title string`.
+#
+
+# Set the title of a tab manually.
+function title {
+    export TITLE_OVERRIDDEN=1
+    PROMPT_COMMAND=''
+    echo -ne "\033]0;$*\007"  # Clear style and echo the passed string to the title.
+}
+
+# If this is xterm, set title automatically unless overridden.
 case "$TERM" in
 xterm*|rxvt*)
+
+	# Clear style and set the title to the working directory name if we don't have a command.
     PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+
+	# If we don't have a manually defined title and we have a command set the title to:
+	# `command - working directory name`
     show_command_in_title_bar()
     {
-        case "$BASH_COMMAND" in
+        if [[ "$TITLE_OVERRIDDEN" == 1 ]]; then return; fi
+        case "$BASH_COMMAND" in # If the command is already in the title do nothing.
             *\033]0*)
                 ;;
-            *)
+            *) # Clear style and set the title.
                 echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
                 ;;
         esac
     }
     trap show_command_in_title_bar DEBUG
     ;;
-*)
+*) # If this isn't xterm do nothing.
     ;;
 esac
 
-# # user
+
+# # User Style and Prompt Character
 #
-# Set different user colors and prompt characters depending on running as root or anything else
+# If the user is root highlight the username in red and set the prompt character to `#`.
+# Otherwise, highlight the username to blue and set the prompt character to `>`.
 #
 if [[ "${USER}" = "root" ]]; then
 	userStyle="${bold}${red}";
@@ -106,9 +135,9 @@ else
 fi
 
 
-# # hostname
+# # Hostname Style
 #
-# if SSH set hostname to yellow, if cportable set it to cyan, otherwise, set it to orange
+# If we're in an SSH session set the hostname to yellow, if it's `cportable` set the hostname to cyan, otherwise set the hostname to orange.
 #
 if [[ "${SSH_TTY}" ]]; then
 	hostStyle="${bold}${yellow}";
@@ -119,31 +148,38 @@ else
 fi;
 
 
-# # git
+# # Git Branch and Status
 #
-# if working directory is a git repository, echo branch name and status to prompt
+# If the working directory is in git repo echo the branch name and the status.
+# The following symbols are used to represent the repo status and multiple statuses can be active.
+#     - `+`: There are uncommited changes.
+#     - `!`: There are unstaged changes.
+#     - `?`: There are untracked files.
+#     - `$`: There are stashed files.
 #
 prompt_git() {
-	exitCode=$?; # preserve last exit code to return
+	exitCode=$?; # Preserve last exit code to return
 	local s='';
 	local branchName='';
 
-	# Check if the current directory is in a Git repository.
-	if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
+	# Check if the current directory is in a git repository.
+	if [ "$(git rev-parse --is-inside-work-tree &> /dev/null; echo "${?}")" == '0' ]; then
 
-		# check if the current directory is in .git before running git checks
+		# ## Check Git Status
+
+		# Check if the current directory is in `.git` before running git checks
 		if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
 
 			# Ensure the index is up to date.
 			git update-index --really-refresh -q &>/dev/null;
 
 			# Check for uncommitted changes in the index.
-			if ! $(git diff --quiet --ignore-submodules --cached); then
+			if ! git diff --quiet --ignore-submodules --cached; then
 				s+='+';
 			fi;
 
 			# Check for unstaged changes.
-			if ! $(git diff-files --quiet --ignore-submodules --); then
+			if ! git diff-files --quiet --ignore-submodules --; then
 				s+='!';
 			fi;
 
@@ -153,14 +189,16 @@ prompt_git() {
 			fi;
 
 			# Check for stashed files.
-			if $(git rev-parse --verify refs/stash &>/dev/null); then
+			if git rev-parse --verify refs/stash &>/dev/null; then
 				s+='$';
 			fi;
 
 		fi;
 
+		# ## Get Branch Name
+
 		# Get the short symbolic ref.
-		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+		# If HEAD isn’t a symbolic ref, get the short SHA for the latest commit.
 		# Otherwise, just give up.
 		branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
 			git rev-parse --short HEAD 2> /dev/null || \
@@ -168,17 +206,21 @@ prompt_git() {
 
 		[ -n "${s}" ] && s=" [${s}]";
 
+		# ## Output
+
+		# Echo git information if this is a git repo and return exit code from previous command.
 		echo -e "${1}${branchName}${2}${s}";
-		return "${exitCode}"; # return exit code from previous command
+		return "${exitCode}";
 	else
-		return "${exitCode}"; # return exit code from previous command
+		# Return exit code from previous command.
+		return "${exitCode}";
 	fi;
 }
 
 
-# # previous command exit
+# # Previous Command Exit Status
 #
-# If the last command failed turn the prompt character red, otherwise set it to light gray
+# If the last command failed turn the prompt character red, otherwise set it to light gray.
 #
 prompt_exit() {
 	if [ "${?}" = "0" ]; then
@@ -189,29 +231,32 @@ prompt_exit() {
 }
 
 
-# # prompt constructor
+# # Prompt ($PS1) Constructor
 #
-# the title matches: `shell name: pwd`
-# the final prompt matches:
+# The final prompt matches:
 # ```
 #
 # username at host in pwd (on branch [git status])
 #  > _
 # ```
 #
-# The section within parenthesis will only appear within Git repors.
-# The prompt character changes from `>` to `⌘` when running as root
+# The section within parenthesis will only appear within git repos.
+# The prompt character changes from `>` to `#` when running as root and is red if the previous command failed.
 #
-PS1=""                                                                           # define empty var
-# PS1+="\[\e]0;\[${title}\]\007\]";                                                # title
-PS1+="\n";                                                                       # new line
-PS1+="\[${userStyle}\]\u\[${reset}\]";                                           # username
+PS1=""                                                                           # (define empty var for alignment)
+PS1+="\n";                                                                       # New line
+PS1+="\[${userStyle}\]\u\[${reset}\]";                                           # Username
 PS1+=" at ";                                                                     # `at`
 PS1+="\[${hostStyle}\]\h\[${reset}\]";                                           # hostname
 PS1+=" in ";                                                                     # `in`
 PS1+="\[${bold}${green}\]\w\[${reset}\]";                                        # pwd
-PS1+="\$(prompt_git \"\[${foreground}\] on \[${magenta}\]\" \"\[${yellow}\]\")"; # Git repository details
+PS1+="\$(prompt_git \"\[${foreground}\] on \[${magenta}\]\" \"\[${yellow}\]\")"; # git status (when in git repo)
 PS1+="\n";                                                                       # new line
 PS1+="\[\$(prompt_exit)\] ${promptCharacter} \[${reset}\]";                      # prompt character
 
+
+# # Multi-Line ($PS2) Prompt Constructor
+#
+# The prompt character you will see when you enter a multi-line command such as appending a `\` to the end of a command.
+#
 PS2="\[${lightGray}\] + \[${reset}\]";
