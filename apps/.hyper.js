@@ -572,7 +572,7 @@ module.exports = {
 		// this plugin is intended to be compatible with other themes and will attempt to override any tab styles implemented by other plugins.
 		// https://www.npmjs.com/package/hyperterm-mactabs
 
-		'hyper-tabs-enhanced',
+		// 'hyper-tabs-enhanced',
 		// enhanced tabs plugin for Hyper. matches any theme.
 		// https://www.npmjs.com/package/hyper-tabs-enhanced
 
@@ -596,7 +596,7 @@ module.exports = {
 		// These two packages conflict with each other and should not be used simultaneously.
 		// hyperterm overlay is a much more mature solution with a few issues like window position and size but hyperterm-summon seems to be under active development and may improve.
 
-		'hyperterm-overlay',
+		// 'hyperterm-overlay',
 		// a complete and customizable solution for a permanent / dropdown / hotkey / overlay window in your Hyper, accessible via hotkeys and/or toolbar icon (tray).
 		// https://www.npmjs.com/package/hyperterm-overlay
 
@@ -618,7 +618,7 @@ module.exports = {
 		// status line plugin for Hyper. shows clickable & useful information. matches any theme.”
 		// https://www.npmjs.com/package/hyper-statusline
 
-		'hyper-vsplit-fix',
+		// 'hyper-vsplit-fix',
 		// fixes the vertical split border in hyper
 		//
 		// notes:
