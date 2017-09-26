@@ -1,13 +1,48 @@
+#!/usr/bin/env bash
 
-# | # Command Aliases
-# |
-# | Quick shortcuts to longer, more complicated or difficult to type commands.
-# |
+# # Paths
 
-# | # General
+# ## Temporary Projects
+alias gwag="cd ~/Source/clients/wnw"                # wnw
+alias guscw="cd ~/Source/clients/uscw"              # uscw
 
-alias l="ls -la"       # List in long format, include dotfiles
+# ## Persistent Source
+alias gcsys="cd ~/Source/csystems/"                 # csystems
+alias gdot="cd ~/Source/csystems/dotfiles"          # dotfiles
+alias gsup="cd ~/Source/csystems/superlumic-config" # superlumic config
+
+# ## System Paths
+alias g="cd /"                                      # root
+alias gv="cd /Volumes"                              # /Volumes
+alias gusr="cd /usr/local"                          # /usr/local
+alias ga="cd /Applications"                         # Applications
+
+# ## Home Paths
+alias ~="cd ~"                                      # home - `cd` is probably faster to type though
+alias gd="cd ~/Desktop"                             # Desktop
+alias gs="cd ~/Source"                              # Source
+alias gdoc="cd ~/Documents"                         # Documents
+alias gdown="cd ~/Downloads"                        # Downloads
+alias gi="cd '/Users/cwhite/Library/Mobile Documents/com~apple~CloudDocs'" # iCloud Drive
+alias gdb="cd ~/Dropbox"                            # Dropbox
+
+# # General Utilities
+
+# Go back to last directory
+alias -- -="cd -"
+
+# Navigate x directories up
+alias ..="cd .."                                     # 1 level
+alias ...="cd ../.."                                 # 2 levels
+alias ....="cd ../../.."                             # 3 levels
+alias .....="cd ../../../.."                         # 4 levels
+alias ......="cd ../../../../.."                     # 5 levels
+alias .......="cd ../../../../../.."                 # 6 levels
+alias ........="cd ../../../../../../.."             # 7 levels
+alias .........="cd ../../../../../../../.."         # 8 levels
+alias ..........="cd ../../../../../../../../.."     # 9 levels
+alias ...........="cd ../../../../../../../../../.." # 10 levels
+
+# `ls`
+alias l="ls -la"       # List in long format, include hidden
 alias ld="ls -ld */"   # List in long format, only directories
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
