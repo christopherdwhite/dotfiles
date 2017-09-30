@@ -145,7 +145,7 @@ module.exports = {
 		themeSettings: {
 			opacity: 1,           // do not make background transparent (default: 0.9)
 			style: 'yoda',        // switch from luke's orange uniform to master Yoda
-			tabActiveMarker: '⌘', // change the character that mars a tab active
+			// tabActiveMarker: '⌘', // change the character that mars a tab active
 		},
 
 		// # Package Settings
