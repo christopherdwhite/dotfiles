@@ -3,7 +3,8 @@
 
 # combines git add, commit with message and push into a single command.
 function gc() {
-	git add . -u          # add and delete files
-	git commit -a -m "$@" # commit changes with description
-	git push              # push changes
+	git add .
+	git add -u
+	git commit -a -m "$@"
+	git push
 }

@@ -441,7 +441,7 @@ module.exports = {
 
 		// ## Plugins: Behavior
 
-		'hypercwd',
+		// 'hypercwd', +
 		// opens new tabs with the same directory as the current tab in Hyper for OS X, Linux and Windows.
 		//
 		// notes:
@@ -449,7 +449,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hypercwd
 
-		'hyperlayout',
+		// 'hyperlayout', +
 		// layout presets for Hyper
 		//
 		// notes:
@@ -458,7 +458,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyperlayout
 
-		'hyperlinks',
+		// 'hyperlinks', +
 		// extension for Hyper that automatically links URLs.
 		//
 		// notes:
@@ -466,7 +466,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyperlinks
 
-		'hyperterm-1password',
+		// 'hyperterm-1password',
 		// extension for HyperTerm that adds 1Password integration.
 		//
 		// notes:
@@ -475,11 +475,11 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyperterm-1password
 
-		'hyperterm-alternatescroll',
+		// 'hyperterm-alternatescroll', +
 		// mousewheel/trackpad scrolling for alternate screen. (less, git log, nano, etc...)
 		// https://www.npmjs.com/package/hyperterm-alternatescroll
 
-		'hyperterm-safepaste',
+		// 'hyperterm-safepaste',
 		// makes pasting into hyperterm safe
 		//
 		// notes:
@@ -488,7 +488,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyperterm-safepaste
 
-		'hyper-broadcast',
+		// 'hyper-broadcast', +
 		// extension for Hyper.app to broadcast user inputs to multiple terms.
 		//
 		// notes:
@@ -504,26 +504,26 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyper-confirm
 
-		'hyper-pane',
+		// 'hyper-pane', +
 		// extension for Hyper to enhance pane navigation.
 		// navigate through panes with arrows, jump directly to a specific pane with digit, change focus on mouse hover or temporarily maximize a pane.
 		// https://www.npmjs.com/package/hyper-pane
 
-		'hyper-search',
+		// 'hyper-search', +
 		// extension for Hyper that allows you to search text in your terminal.
 		// https://www.npmjs.com/package/hyper-search
 
-		'hyper-startup',
+		// 'hyper-startup', +
 		// this is an extension for Hyper, which executes commands when Hyper launches.
 		// https://www.npmjs.com/package/hyper-startup
 
-		'hyper-log-actions',
+		// 'hyper-log-actions', +
 		// log all actions from hyperterm in the dev console
 		// https://www.npmjs.com/package/hyper-log-actions
 
 		// ## Plugins: Files
 
-		'hyper-markdown-preview',
+		// 'hyper-markdown-preview', +
 		// a plugin to preview markdown files in your Hyper term.
 		// https://www.npmjs.com/package/hyper-markdown-preview
 
@@ -559,7 +559,7 @@ module.exports = {
 
 		// ### Plugins: UI: Menus
 
-		'hyper-always-on-top',
+		// 'hyper-always-on-top', +
 		// extension for Hyper.app to add a menu item to keep application windows always on top.
 		// https://www.npmjs.com/package/hyper-always-on-top
 
@@ -584,7 +584,7 @@ module.exports = {
 
 		// ### Plugins: UI: Text
 
-		'hyper-font-smoothing',
+		// 'hyper-font-smoothing',
 		// extension for subpixel-antialiased font smoothing in hyper
 		// https://www.npmjs.com/package/hyper-font-smoothing
 
