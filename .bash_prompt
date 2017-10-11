@@ -89,9 +89,9 @@ fi;
 
 # Set the title of a tab manually.
 function title {
-    export TITLE_OVERRIDDEN=1
-    PROMPT_COMMAND=''
-    echo -ne "\033]0;$*\007"  # Clear style and echo the passed string to the title.
+	export TITLE_OVERRIDDEN=1
+	PROMPT_COMMAND=''
+	echo -ne "\033]0;$*\007"  # Clear style and echo the passed string to the title.
 }
 
 # If this is xterm, set title automatically unless overridden.
@@ -99,25 +99,25 @@ case "$TERM" in
 xterm*|rxvt*)
 
 	# Clear style and set the title to the working directory name if we don't have a command.
-    PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+	PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 
 	# If we don't have a manually defined title and we have a command set the title to:
 	# `command - working directory name`
-    show_command_in_title_bar()
-    {
-        if [[ "$TITLE_OVERRIDDEN" == 1 ]]; then return; fi
-        case "$BASH_COMMAND" in # If the command is already in the title do nothing.
-            *\033]0*)
-                ;;
-            *) # Clear style and set the title.
-                echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
-                ;;
-        esac
-    }
-    trap show_command_in_title_bar DEBUG
-    ;;
+	show_command_in_title_bar()
+	{
+		if [[ "$TITLE_OVERRIDDEN" == 1 ]]; then return; fi
+		case "$BASH_COMMAND" in # If the command is already in the title do nothing.
+			*\033]0*)
+				;;
+			*) # Clear style and set the title.
+				echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
+				;;
+		esac
+	}
+	trap show_command_in_title_bar DEBUG
+	;;
 *) # If this isn't xterm do nothing.
-    ;;
+	;;
 esac
 
 
@@ -152,10 +152,10 @@ fi;
 #
 # If the working directory is in git repo echo the branch name and the status.
 # The following symbols are used to represent the repo status and multiple statuses can be active.
-#     - `+`: There are uncommited changes.
-#     - `!`: There are unstaged changes.
-#     - `?`: There are untracked files.
-#     - `$`: There are stashed files.
+#	 - `+`: There are uncommited changes.
+#	 - `!`: There are unstaged changes.
+#	 - `?`: There are untracked files.
+#	 - `$`: There are stashed files.
 #
 prompt_git() {
 	exitCode=$?; # Preserve last exit code to return
