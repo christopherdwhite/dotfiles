@@ -1,30 +1,39 @@
 #!/usr/bin/env bash
 
+# # Bash Aliases
+#
+# Shortcuts for longer commands
+
 # # Paths
+#
+# Go to important system and project paths
 
-# ## Temporary Projects
-alias gwag="cd ~/Source/clients/wnw"                # wnw
-alias guscw="cd ~/Source/clients/uscw"              # uscw
+# Temporary Projects
+alias guscw="cd ~/Source/clients/uscw"                                     # uscw
 
-# ## Persistent Source
-alias gcsys="cd ~/Source/csystems/"                 # csystems
-alias gdot="cd ~/Source/csystems/dotfiles"          # dotfiles
-alias gsup="cd ~/Source/csystems/superlumic-config" # superlumic config
+# Persistent Source
+alias gcsys="cd ~/Source/csystems/"                                        # csystems
+alias gdot="cd ~/Source/csystems/dotfiles"                                 # dotfiles
+alias gos="cd ~/Source/open-source"                                        # open-source
 
-# ## System Paths
-alias g="cd /"                                      # root
-alias gv="cd /Volumes"                              # /Volumes
-alias gusr="cd /usr/local"                          # /usr/local
-alias ga="cd /Applications"                         # Applications
+# System Paths
+alias g="cd /"                                                             # root
+alias gv="cd /Volumes"                                                     # /Volumes
+alias gusr="cd /usr/local"                                                 # /usr/local
+alias ga="cd /Applications"                                                # Applications
 
-# ## Home Paths
-alias ~="cd ~"                                      # home - `cd` is probably faster to type though
-alias gd="cd ~/Desktop"                             # Desktop
-alias gs="cd ~/Source"                              # Source
-alias gdoc="cd ~/Documents"                         # Documents
-alias gdown="cd ~/Downloads"                        # Downloads
+# Home Paths
+alias ~="cd ~"                                                             # home - `cd` is probably faster to type though
+alias gd="cd ~/Desktop"                                                    # Desktop
+alias gs="cd ~/Source"                                                     # Source
+alias gdoc="cd ~/Documents"                                                # Documents
+alias gdown="cd ~/Downloads"                                               # Downloads
 alias gi="cd '/Users/cwhite/Library/Mobile Documents/com~apple~CloudDocs'" # iCloud Drive
-alias gdb="cd ~/Dropbox"                            # Dropbox
+alias gdb="cd ~/Dropbox"                                                   # Dropbox
+
+
+
+
 
 # # General Utilities
 
@@ -44,5 +53,33 @@ alias ..........="cd ../../../../../../../../.."     # 9 levels
 alias ...........="cd ../../../../../../../../../.." # 10 levels
 
 # `ls`
-alias l="ls -la"       # List in long format, include hidden
-alias ld="ls -ld */"   # List in long format, only directories
+alias l="ls -la"                                     # List in long format, include hidden
+alias ld="ls -ld */"                                 # List in long format, only directories
+
+
+
+
+
+# # BASH Environment
+
+alias .s="source ~/.bash_profile" # Source/Update Bash Profile
+
+
+
+
+
+# # Package Managers
+
+# Homebrew
+alias bs="brew search"          # Homebrew Searc
+alias bh="brew home"            # Homebrew Home
+alias bi="brew install"         # Homebrew Install
+alias bu="brew uninstall"       # Homebrew Uninstall
+alias bl="brew list"            # Homebrew List
+
+# Homebrew Cask
+alias bcs="brew cask search"    # Homebrew Cask Search
+alias bch="brew cask home"      # Homebrew Cask Home
+alias bci="brew cask install"   # Homebrew Cask Install
+alias bcu="brew cask uninstall" # Homebrew Cask Uninstall
+alias bcl="brew cask list"      # Homebrew Cask List

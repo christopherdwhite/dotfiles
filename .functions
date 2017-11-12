@@ -1,6 +1,58 @@
+#!/bin/bash
 
-# # git functions
+# # Bash Functions
+#
+# Useful functions that save time and simplify bash related tasks.
+#
 
+# # Productivity Functions
+
+# opl() 1Password Log In
+#
+# Sign in to 1Password CLI
+#
+function opl() {
+	eval "$(op signin my)"
+}
+
+# opq() Get Password from 1Password
+#
+# Queries 1Password for a login with the name matching the passed string and assigns the password to the Keyboard Maestro op_passboard variable.
+#
+# I have a Keybaord Maestro macro that will insert the password by typing assigned to control-option-command-v
+#
+# NOTE: This probably isn't the most secure practice, malicious software could probably pick up the password in a few different ways but since it does use a Keyboard Maestro variable it's never passed to clipboard won't be saved in clipboard history applications.
+#
+function opq() {
+	local passboard
+	passboard=`op get item "$@" | jq --raw-output '.details.fields[] | select(.designation=="password").value' | tr -d "\n"`
+	osascript -e "tell app \"Keyboard Maestro Engine\" to setvariable \"op_passboard\" to \"$passboard\""
+}
+
+# 1pf() Get password from 1Password Fallback
+#
+# This is a fallback function that queries 1Password for a password and copies it to a clipboard if Keyboard Maestro isn't installed on this system.
+#
+# NOTE: This is _not_ a secure practice as any process that monitors pasteboards such as a clipboard history app will catch the password.
+#
+# To partially make this more secure you can set most clipboard history applications to ignore anything copied from a specefic app such as the Terminal but this is a global setting for the app, it won't save anything copied from the terminal which may cause more frustration than it seeks to avoid.
+#
+# Additionally, this still leaves the possibility that another application is monitoring the clipboard that you're unaware of, maliciously or otherwise.
+#
+# It might be possible to flag the data as org.nspasteboard.ConcealedType but I after a bunch of searching and testing I haven't figured out if that's possible using pbcopy.
+#
+function opf() {
+	op get item "$@" | jq --raw-output '.details.fields[] | select(.designation=="password").value' | tr -d "\n" | pbcopy
+}
+
+
+
+
+
+# # Source Functions
+
+# gc() Lazy git commit
+#
 # combines git add, commit with message and push into a single command.
 function gc() {
 	git add .
