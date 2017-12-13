@@ -7,6 +7,8 @@
 
 # # Productivity Functions
 
+# ## 1Password Fuctions
+
 # opl() 1Password Log In
 #
 # Sign in to 1Password CLI
@@ -29,7 +31,7 @@ function opq() {
 	osascript -e "tell app \"Keyboard Maestro Engine\" to setvariable \"op_passboard\" to \"$passboard\""
 }
 
-# 1pf() Get password from 1Password Fallback
+# opf() Get password from 1Password Fallback
 #
 # This is a fallback function that queries 1Password for a password and copies it to a clipboard if Keyboard Maestro isn't installed on this system.
 #
@@ -47,9 +49,49 @@ function opf() {
 
 
 
+# ## Dash Functions
+#
+# Functions to search Dash from commmand line
+
+# dash() Open Argument in Dash
+#
+# Search's Dash for the supplied argument copied from Brett Terpstra's blog:
+#
+# http://brettterpstra.com/2014/05/10/bash-and-dash/
+#
+function dash() {
+	open "dash://$*"
+}
+
+# dman() Open Argument's Manpage in Dash
+#
+# Rather than printing a manpage in the terminal open it in Dash instead, also copied from Brett's post.
+#
+function dman() {
+	open "dash://manpages:$*"
+}
 
 
-# # Source Functions
+
+# ## Marky Functions
+#
+# Convert webpages to Markdown via Brett's Marky service
+#
+# http://fuckyeahmarkdown.com
+#
+
+# wmd() Web to Markdown Copier
+wmd () {
+	encurl=$(urlenc "$@")
+	curl "http://fuckyeahmarkdown.com/go/?read=1&preview=0&showframe=0&u=$encurl" -s|pbcopy
+	echo "Copied"
+}
+
+
+
+
+
+# # Source Control Functions
 
 # gc() Lazy git commit
 #
@@ -59,4 +101,20 @@ function gc() {
 	git add -u
 	git commit -a -m "$@"
 	git push
+}
+
+
+
+
+
+# # Utility Functions
+
+# urlenc() URL Encode Passed String
+#
+# Tweaked from Brett's function:
+#
+# http://brettterpstra.com/2012/06/20/marky-the-markdownifier-reintroductions/
+#
+urlenc () {
+	echo -n "$@" | perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg'
 }

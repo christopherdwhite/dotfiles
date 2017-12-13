@@ -46,8 +46,8 @@ module.exports = {
 		foregroundColor: 'hsl(0, 0%, 0%)',
 
 		// terminal background color
-		backgroundColor: 'hsl(0, 0%, 100%)',         // White
-		// backgroundColor: 'hsl(0, 0%, 0%)',           // black
+		backgroundColor: 'hsla(0, 100%, 100%, 1)',   // White
+		// backgroundColor: 'hsl(0, 0%, 0%)',           // Black
 		// backgroundColor: 'hsla(0, 0%, 0%, 0.1)',     // Tranparent Black
 		// backgroundColor: 'hsla(0, 100%, 100%, 0.1)', // Tranparent White
 
@@ -57,20 +57,20 @@ module.exports = {
 		// the full list. if you're going to provide the full color palette, including the 6 x 6 color cubes and the grayscale map, just provide an array here instead of a color map object
 		colors: {
 			black: 'hsl(0, 0%, 0%)',
-			red: 'hsl(0, 100%, 25%)',
-			green: 'hsl(120, 100%, 25%)',
-			yellow: 'hsl(60, 100%, 25%)',
-			blue: 'hsl(240, 100%, 25%)',
-			magenta: 'hsl(300, 100%, 25%)',
-			cyan: 'hsl(180, 100%, 25%)',
+			red: 'hsl(352, 81%, 58%)',
+			green: 'hsl(107, 40%, 56%)',
+			yellow: 'hsl(50, 98%, 38%)',
+			blue: 'hsl(195, 62%, 57%)',
+			magenta: 'hsl(289, 84%, 53%)',
+			cyan: 'hsl(172, 61%, 56%)',
 			white: 'hsl(0, 0%, 73%)',
 			lightBlack: 'hsl(0, 0%, 50%)',
-			lightRed: 'hsl(0, 100%, 50%)',
-			lightGreen: 'hsl(120, 100%, 50%)',
-			lightYellow: 'hsl(60, 100%, 50%)',
-			lightBlue: 'hsl(217, 100%, 50%)',
-			lightMagenta: 'hsl(300, 100%, 50%)',
-			lightCyan: 'hsl(180, 100%, 42%)',
+			lightRed: 'hsl(352, 81%, 58%)',
+			lightGreen: 'hsl(107, 40%, 56%)',
+			lightYellow: 'hsl(50, 98%, 38%)',
+			lightBlue: 'hsl(195, 62%, 57%)',
+			lightMagenta: 'hsl(289, 84%, 53%)',
+			lightCyan: 'hsl(172, 61%, 56%)',
 			lightWhite: 'hsl(0, 0%, 100%)',
 		},
 
@@ -278,40 +278,40 @@ module.exports = {
 			footerTransparent: true, // disable footer transparency
 		},
 
-		// hyper-tab-icons
-		tabIcons: {
-			activeStyle: {
-				display: 'inline-block',
-				marginRight: '0.25rem',
-				transition: 'opacity 200ms ease-in',
-				verticalAlign: 'middle',
-				width: '1rem',
-			},
-			inactiveStyle: {
-				opacity: 0.3,
-			},
-			// mapIcons: {
-			// 	nodejs: ['node'],
-			// 	docker: ['docker-compose'],
-			// },
-			// disableColors: 'false',
-			mapColors: {
-				bash: 'hsl(127, 49%, 46%)',
-				docker: 'hsl(194, 88%, 49%)',
-				'docker-compose': 'hsl(194, 88%, 49%)',
-				fish: 'hsl(357, 63%, 56%)',
-				nodejs: 'hsl(80, 100%, 37%)',
-				node: 'hsl(80, 100%, 37%)',
-				npm: 'hsl(357, 70%, 44%)',
-				rails: 'hsl(0, 100%, 40%)',
-				ruby: 'hsl(2, 63%, 48%)',
-				shell: 'hsl(0, 0%, 0%)',
-				zsh: 'hsl(66, 100%, 42%)',
-				python: 'hsl(48, 100%, 67%)',
-				vim: 'hsl(120, 100%, 25%)',
-				yarn: 'hsl(198, 61%, 45%)',
-			}
+	// hyper-tab-icons
+	tabIcons: {
+		activeStyle: {
+			display: 'inline-block',
+			marginRight: '0.25rem',
+			transition: 'opacity 200ms ease-in',
+			verticalAlign: 'middle',
+			width: '1rem',
+		},
+		inactiveStyle: {
+			opacity: 0.5,
+		},
+		// mapIcons: {
+		// 	nodejs: ['node'],
+		// 	docker: ['docker-compose'],
+		// },
+		// disableColors: 'false',
+		mapColors: {
+			bash: 'hsl(127, 49%, 46%)',
+			docker: 'hsl(194, 88%, 49%)',
+			'docker-compose': 'hsl(194, 88%, 49%)',
+			fish: 'hsl(357, 63%, 56%)',
+			nodejs: 'hsl(80, 100%, 37%)',
+			node: 'hsl(80, 100%, 37%)',
+			npm: 'hsl(357, 70%, 44%)',
+			rails: 'hsl(0, 100%, 40%)',
+			ruby: 'hsl(2, 63%, 48%)',
+			shell: 'hsl(0, 0%, 0%)',
+			zsh: 'hsl(66, 100%, 42%)',
+			python: 'hsl(48, 100%, 67%)',
+			vim: 'hsl(120, 100%, 25%)',
+			yarn: 'hsl(198, 61%, 45%)',
 		}
+	}
 
 	},
 
