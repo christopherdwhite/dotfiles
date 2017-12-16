@@ -30,13 +30,13 @@ module.exports = {
 		fontFamily: '"Input Mono", Hack, "Source Code Pro", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
 		// terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-		cursorColor: 'rgba(0, 0, 0, 0.15)',
+		cursorColor: 'hsla(195, 62%, 57%, 0.5)',
 
 		// `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
 		cursorShape: 'BEAM',
 
 		// set to true for blinking cursor
-		cursorBlink: false,
+		cursorBlink: true,
 
 
 
@@ -52,7 +52,7 @@ module.exports = {
 		// backgroundColor: 'hsla(0, 100%, 100%, 0.1)', // Tranparent White
 
 		// border color (window, tabs)
-		borderColor: 'rgba(111, 12, 197, 1)',
+		borderColor: 'hsl(0, 0%, 90%)',
 
 		// the full list. if you're going to provide the full color palette, including the 6 x 6 color cubes and the grayscale map, just provide an array here instead of a color map object
 		colors: {
@@ -80,7 +80,11 @@ module.exports = {
 
 		// custom css to embed in the main window
 		css: `
-		.hyper_main, .tab_tab, .tabs_borderShim {
+		body {
+			background-color: white;
+		}
+
+		.tab_tab, .tabs_borderShim {
 			border: none !important;
 		}
 
@@ -89,6 +93,9 @@ module.exports = {
 			left: 0px !important;
 			right: 0px !important;
 			background-color: hsl(0, 0%, 95%);
+			border-top: 1px solid hsl(0, 0%, 90%);
+			border-left: 1px solid hsl(0, 0%, 90%);
+			border-right: 1px solid hsl(0, 0%, 90%);
 		}
 
 		.tabs_title {
@@ -339,7 +346,7 @@ module.exports = {
 		//
 		// https://www.npmjs.com/package/hyper-broadcast
 
-		'hyper-pane',
+		// 'hyper-pane',
 		// extension for Hyper to enhance pane navigation.
 		// navigate through panes with arrows, jump directly to a specific pane with digit, change focus on mouse hover or temporarily maximize a pane.
 		// https://www.npmjs.com/package/hyper-pane
@@ -373,7 +380,7 @@ module.exports = {
 		// enhanced tabs plugin for Hyper. matches any theme.
 		// https://www.npmjs.com/package/hyper-tabs-enhanced
 
-		'hyperterm-overlay',
+		// 'hyperterm-overlay',
 		// a complete and customizable solution for a permanent / dropdown / hotkey / overlay window in your Hyper, accessible via hotkeys and/or toolbar icon (tray).
 		// https://www.npmjs.com/package/hyperterm-overlay
 

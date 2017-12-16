@@ -5,6 +5,21 @@
 # Useful functions that save time and simplify bash related tasks.
 #
 
+# # Table of Contents
+#
+# - Productivity Functions
+#   - 1Password Fuctions
+#   - Dash Functions
+#   - Marky Functions
+# - Symlink Functions
+# - Source Control Functions
+# - Utility Functions
+#
+
+
+
+
+
 # # Productivity Functions
 
 # ## 1Password Fuctions
@@ -71,6 +86,14 @@ function dman() {
 	open "dash://manpages:$*"
 }
 
+# dman() Open Argument's TLDR Page in Dash
+#
+# Opens a TLDR page for a command (where one exists) rather than using the manpage.
+#
+function tldr() {
+	open "dash://tldr:$*"
+}
+
 
 
 # ## Marky Functions
@@ -85,6 +108,29 @@ wmd () {
 	encurl=$(urlenc "$@")
 	curl "http://fuckyeahmarkdown.com/go/?read=1&preview=0&showframe=0&u=$encurl" -s|pbcopy
 	echo "Copied"
+}
+
+
+
+
+
+# # Symlink Functions
+#
+# Three functions that take a path and symlinks them into `~/Library/Application Support`, `~/Library/Containers` and `~/Library/Preferences`
+
+# syma() Symlink to Application Directory
+function syma() {
+	ln -s "$@" "$HOME/Library/Application Support"
+}
+
+# symc() Symlink to Containers
+function symc() {
+	ln -s "$@" "$HOME/Library/Containers"
+}
+
+# symp() Symlink to Preferences
+function symc() {
+	ln -s "$@" "$HOME/Library/Preferences"
 }
 
 
