@@ -5,3 +5,12 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH";
 
 # Ensure Homebrew Python takes precedence
 export PATH="/usr/local/opt/python/libexec/bin:$PATH";
+
+# Add Basher
+export PATH="$HOME/.basher/bin:$PATH"
+
+# Add Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# Add Visual Studio Code (code)
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"

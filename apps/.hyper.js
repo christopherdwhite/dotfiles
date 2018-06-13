@@ -6,112 +6,92 @@ module.exports = {
 	config: {
 
 
-
-
-
 		// # Application Settings
 
-		// Choose either "stable" for receiving highly polished, or "canary" for less polished but more frequent updates
+		// `Stable` or `Canary` (beta).
 		updateChannel: 'canary',
-
-
-
 
 
 
 		// # UI
 
 		// ## UI: Text
-
-		// default font size in pixels for all tabs
 		fontSize: 12,
 
-		// font family with optional fallbacks
-		fontFamily: '"Input Mono", Hack, "Source Code Pro", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
+		fontFamily: '"SF Mono (+ FiraCode Ligatures)", "Input Mono", Hack, "Source Code Pro", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
-		// terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-		cursorColor: 'hsla(195, 62%, 57%, 0.5)',
+		// Terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk).
+		cursorColor: 'hsla(195, 62%, 57%, 1)',
 
-		// `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
+		// `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █.
 		cursorShape: 'BEAM',
 
-		// set to true for blinking cursor
 		cursorBlink: true,
 
 
-
 		// ## UI: Default Colors
-
-		// color of the text
+		// Color of the text.
 		foregroundColor: 'hsl(0, 0%, 0%)',
 
-		// terminal background color
-		backgroundColor: 'hsla(0, 100%, 100%, 1)',   // White
-		// backgroundColor: 'hsl(0, 0%, 0%)',           // Black
-		// backgroundColor: 'hsla(0, 0%, 0%, 0.1)',     // Tranparent Black
-		// backgroundColor: 'hsla(0, 100%, 100%, 0.1)', // Tranparent White
+		backgroundColor: 'hsla(0, 100%, 100%, 1)',
 
-		// border color (window, tabs)
+		// Border color (window, tabs).
 		borderColor: 'hsl(0, 0%, 90%)',
 
-		// the full list. if you're going to provide the full color palette, including the 6 x 6 color cubes and the grayscale map, just provide an array here instead of a color map object
+		// The full list. if you're going to provide the full color palette, including the 6 x 6 color cubes and the grayscale map, just provide an array here instead of a color map object.
 		colors: {
-			black: 'hsl(0, 0%, 0%)',
-			red: 'hsl(352, 81%, 58%)',
-			green: 'hsl(107, 40%, 56%)',
-			yellow: 'hsl(50, 98%, 38%)',
-			blue: 'hsl(195, 62%, 57%)',
-			magenta: 'hsl(289, 84%, 53%)',
-			cyan: 'hsl(172, 61%, 56%)',
-			white: 'hsl(0, 0%, 73%)',
-			lightBlack: 'hsl(0, 0%, 50%)',
-			lightRed: 'hsl(352, 81%, 58%)',
-			lightGreen: 'hsl(107, 40%, 56%)',
-			lightYellow: 'hsl(50, 98%, 38%)',
-			lightBlue: 'hsl(195, 62%, 57%)',
+			black       : 'hsl(0, 0%, 0%)',
+			red         : 'hsl(352, 81%, 58%)',
+			green       : 'hsl(107, 40%, 56%)',
+			yellow      : 'hsl(50, 98%, 38%)',
+			blue        : 'hsl(195, 62%, 57%)',
+			magenta     : 'hsl(289, 84%, 53%)',
+			cyan        : 'hsl(172, 61%, 56%)',
+			white       : 'hsl(0, 0%, 73%)',
+			lightBlack  : 'hsl(0, 0%, 50%)',
+			lightRed    : 'hsl(352, 81%, 58%)',
+			lightGreen  : 'hsl(107, 40%, 56%)',
+			lightYellow : 'hsl(50, 98%, 38%)',
+			lightBlue   : 'hsl(195, 62%, 57%)',
 			lightMagenta: 'hsl(289, 84%, 53%)',
-			lightCyan: 'hsl(172, 61%, 56%)',
-			lightWhite: 'hsl(0, 0%, 100%)',
+			lightCyan   : 'hsl(172, 61%, 56%)',
+			lightWhite  : 'hsl(0, 0%, 100%)',
 		},
 
 
-
 		// ## UI: Window
-
-		// custom css to embed in the main window
+		// TODO: At some point I may want to convert this to a theme.
+		// Custom css to embed in the main window.
 		css: `
-		body {
-			background-color: white;
-		}
 
 		.tab_tab, .tabs_borderShim {
 			border: none !important;
 		}
 
 		header {
-			top: 0px !important;
-			left: 0px !important;
-			right: 0px !important;
+			top             : 0px !important;
+			left            : 0px !important;
+			right           : 0px !important;
 			background-color: hsl(0, 0%, 95%);
-			border-top: 1px solid hsl(0, 0%, 90%);
-			border-left: 1px solid hsl(0, 0%, 90%);
-			border-right: 1px solid hsl(0, 0%, 90%);
+			border-top      : 1px solid hsl(0, 0%, 90%);
+			border-left     : 1px solid hsl(0, 0%, 90%);
+			border-right    : 1px solid hsl(0, 0%, 90%);
 		}
 
 		.tabs_title {
 			background-color: hsl(0, 0%, 100%) !important;
-			color: hsl(0, 0%, 0%) !important;
+			color           : hsl(0, 0%, 0%) !important;
 		}
 
 		.tab_active {
 			background-color: hsl(0, 0%, 100%) !important;
-			color: hsl(0, 0%, 0%) !important;
-			border-radius: 2px 2px 0px 0px;
+			color           : hsl(0, 0%, 0%) !important;
+			border-radius   : 2px 2px 0px 0px;
 		}
 
 		.tab_tab {
 			background-color: hsl(0, 0%, 95%);
-			color: hsla(0, 0%, 0%, 0.5);
+			color           : hsla(0, 0%, 0%, 0.5);
 		}
 
 		.tab_tab svg {
@@ -123,31 +103,30 @@ module.exports = {
 		}
 		`,
 
-		// custom css to embed in the terminal window
-		termCSS: '',
-
-		// set to `true` (without backticks and without quotes) if you're using a Linux setup that doesn't show native menus default: `false` on Linux, `true` on Windows (ignored on macOS)
-		showHamburgerMenu: '',
-
-		// set to `false` if you want to hide the minimize, maximize and close buttons
-		// additionally, set to `'left'` if you want them on the left, like in Ubuntu
-		// default: `true` on windows and Linux (ignored on macOS)
-		showWindowControls: '',
-
-		// custom padding (css format, i.e.: `top right bottom left`)
+		// Custom padding (css format, i.e.: `top right bottom left`).
 		padding: '12px 14px',
 
+		// Custom css to embed in the terminal window.
+		termCSS: '',
 
+
+		// ## Linux / Windows Settings
+		// Set to `true` (without backticks and without quotes) if you're using a Linux setup that doesn't show native menus default: `false` on Linux, `true` on Windows (ignored on macOS).
+		showHamburgerMenu: '',
+
+		// Set to `false` if you want to hide the minimize, maximize and close buttons. Set to `'left'` if you want them on the left, like in Ubuntu.
+		// Default: `true` on windows and Linux (ignored on macOS).
+		showWindowControls: '',
 
 
 
 		// # Shell
 
-		// the shell to run when spawning a new session (i.e. /usr/local/bin/fish) if left empty, your system's login shell will be used by default
+		// Shell to run when spawning a new session (i.e. `/usr/local/bin/fish`). Defaults to system's login shell.
 		//
 		// Windows
-		// - Make sure to use a full path if the binary name doesn't work
-		// - Remove `--login` in shellArgs
+		// - Make sure to use a full path if the binary name doesn't work.
+		// - Remove `--login` in shellArgs.
 		//
 		// Bash on Windows
 		// - Example: `C:\\Windows\\System32\\bash.exe`
@@ -156,249 +135,218 @@ module.exports = {
 		// - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
 		shell: '',
 
-		// for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
-		// by default ['--login'] will be used
+		// Shell arguments (i.e. for using interactive shellArgs: ['-i']). Defaults to `['--login']`.
 		shellArgs: ['--login'],
 
-		// for environment variables
+		// Environment variables.
 		env: {},
-
-
 
 
 
 		// # Behavior
 
-		// set to false for no bell
+		// Set to `false` for no bell.
 		bell: 'SOUND',
 
-		// if true, selected text will automatically be copied to the clipboard
-		copyOnSelect: true,
-
-		// if true, on right click selected text will be copied or pasted if noselection is present (true by default on Windows)
-		// quickEdit: true,
-
-		// URL to custom bell
+		// URL to custom bell.
 		// bellSoundURL: 'http://example.com/bell.mp3',
 
-		// for advanced config flags please refer to https://hyper.is/#cfg
+		copyOnSelect: true,
 
+		// If true, on right click selected text will be copied or pasted if noselection is present (true by default on Windows).
+		// quickEdit: true,
 
+		// For advanced config flags please refer to https://hyper.is/#cfg
 
 
 
 		// # Plugin Settings
 
 		// ## Plugin Settings: Behavior
-
 		// hyper-pane
 		paneNavigation: {
-			debug: false,
+			debug  : false,
 			hotkeys: {
 				navigation: {
-					up: 'ctrl+alt+up',
-					down: 'ctrl+alt+down',
-					left: 'ctrl+alt+left',
+					up   : 'ctrl+alt+up',
+					down : 'ctrl+alt+down',
+					left : 'ctrl+alt+left',
 					right: 'ctrl+alt+right',
 				},
-				jump_prefix: 'ctrl+alt',       // completed with 1-9 digits
+				jump_prefix: 'ctrl+alt',   // Completed with 1-9 digits.
 
-				// added to jump and navigation hotkeys for pane permutation
+				// Jump and navigation hotkeys for pane permutation.
 				permutation_modifier: 'shift',
 
 				maximize: 'meta+enter',
 			},
-			showIndicators: true,              // show pane number
-			indicatorPrefix: '^⌥',            // will be completed with pane number
-			indicatorStyle: {                  // added to indicator <div>
+			showIndicators : true,   // Show pane number.
+			indicatorPrefix: '^⌥',   // Will be completed with pane number.
+
+			// Added to indicator <div>.
+			indicatorStyle : {
 				position: 'absolute',
-				top: 0,
-				left: 0,
+				top     : 0,
+				left    : 0,
 				fontSize: '10px',
 			},
 
-			// set to true and focus will change when mouse cursor enters into an another pane.
+			// Set to true and focus will change when mouse cursor enters into an another pane.
 			focusOnMouseHover: false,
 		},
 
 
-
 		// ## Plugin Settings: UI
-
 		// hyper-always-on-top
 		alwaysOnTop: {
-			debug: false,
-			default: false, // enabled on application start
+			debug  : false,
+			default: false,   // Enabled on start.
 		},
 
 		// hyper-broadcast
 		broadcast: {
-			debug: false,
+			debug  : false,
 			hotkeys: {
-				selectCurrentPane: 'Command+Alt+Shift+B',
+				selectCurrentPane    : 'Command+Alt+Shift+B',
 				selectCurrentTabPanes: 'Command+Alt+B',
-				selectAllPanes: 'Command+Shift+B',
-				toggleCurrentPane: 'Command+Alt+Control+Shift+B'
+				selectAllPanes       : 'Command+Shift+B',
+				toggleCurrentPane    : 'Command+Alt+Control+Shift+B'
 			},
 			indicatorStyle: {
-				position: 'absolute',
-				top: 5,
-				right: 10,
+				position    : 'absolute',
+				top         : 5,
+				right       : 10,
 				borderRadius: '50%',
-				width: '10px',
-				height: '10px',
-				background: 'red'
+				width       : '10px',
+				height      : '10px',
+				background  : 'red'
 			},
 		},
 
 		// hyperterm-overlay
 		overlay: {
+			alwaysOnTop   : false,    // Makes Hyperterm Overlay window stay always on top. default: `true`.
+			animate       : false,    // Enable animation when show and hide the window. default: `true`.
+			hasShadow     : true,     // Controls the default macOS window shadows. default: `false`.
+			hideDock      : false,    // Removes the Hyper dock icon. It works only when the unique option is activated. default: `false`.
+			hideOnBlur    : false,    // Hides the Hyperterm Overlay when it loses focus. default: `false`.
+			position      : 'left',   // Choose where Hyperterm Overlay will be positioned: top, bottom, left or right. default: `top`.
+			primaryDisplay: false,    // Show Hyperterm Overlay only on primary display. default: `false`.
+			resizable     : false,    // Allow the Hyperterm Overlay be resizable. default: `false`.
+			startAlone    : true,     // Makes HyperTerm Overlay the unique window displayed when started. default: `false`.
+			startup       : true,     // Open HyperTerm Overlay on Hyper startup. default: `true`.
+			tray          : false,    // Add icon to the system notification area, for access HyperTerm Overlay. default: `true`.
+			unique        : false,    // Makes HyperTerm Overlay the unique window of Hyper. any other window will be removed. default: `false`.
 
-			alwaysOnTop: true,     // makes Hyperterm Overlay window stay always on top. default: `true`
-			animate: true,         // enable animation when show and hide the window. default: `true`
-			hasShadow: false,      // controls the default macOS window shadows. default: `false`
-			hideDock: false,       // removes the Hyper dock icon. It works only when the unique option is activated. default: `false`
-			hideOnBlur: false,     // hides the Hyperterm Overlay when it loses focus. default: `false`
-			position: 'top',       // choose where Hyperterm Overlay will be positioned: top, bottom, left or right. default: `top`
-			primaryDisplay: false, // show Hyperterm Overlay only on primary display. default: `false`
-			resizable: false,      // allow the Hyperterm Overlay be resizable. default: `false`
-			startAlone: false,     // makes HyperTerm Overlay the unique window displayed when started. default: `false`
-			startup: false,        // open HyperTerm Overlay on Hyper startup. default: `true`
-			tray: true,            // add icon to the system notification area, for access HyperTerm Overlay. default: `true`
-			unique: false,         // makes HyperTerm Overlay the unique window of Hyper. any other window will be removed. default: false
+			// Specify one or more hotkeys to show and hide the HyperTerm Overlay (see: Accelerator documentation). default: `['Option+Space']`
+			hotkeys: ['Control+Option+Shift+F6'],
 
-			// specify one or more hotkeys to show and hide the HyperTerm Overlay (see: Accelerator documentation)
-			// default: `['Option+Space']`
-			hotkeys: ['Control+Command+h'],
-
-			// the size of HyperTerm Overlay when it is showing.
-			// the possible values are a `number` or a `float`.
-			// if is is a number, it represents the size um pixels.
-			// else, if it is a float, it means the percentage of the screen.
+			// The size of HyperTerm Overlay when it is showing. The possible values are a `number` or a `float`. If is is a number, it represents the size im pixels. Otherwise, if it is a float, it means the percentage of the screen.
 			size: 0.5,
 		},
 
 		// hyper-statusline
 		hyperStatusLine: {
-			dirtyColor: '#ffff00',   // change git dirty color
-			aheadColor: '#0066ff',   // change git ahead color
-			footerTransparent: true, // disable footer transparency
+			dirtyColor       : '#ffff00',   // Change git dirty color.
+			aheadColor       : '#0066ff',   // Change git ahead color.
+			footerTransparent: true,        // Disable footer transparency.
 		},
 
-	// hyper-tab-icons
-	tabIcons: {
-		activeStyle: {
-			display: 'inline-block',
-			marginRight: '0.25rem',
-			transition: 'opacity 200ms ease-in',
-			verticalAlign: 'middle',
-			width: '1rem',
-		},
-		inactiveStyle: {
-			opacity: 0.5,
-		},
-		// mapIcons: {
-		// 	nodejs: ['node'],
-		// 	docker: ['docker-compose'],
-		// },
-		// disableColors: 'false',
-		mapColors: {
-			bash: 'hsl(127, 49%, 46%)',
-			docker: 'hsl(194, 88%, 49%)',
-			'docker-compose': 'hsl(194, 88%, 49%)',
-			fish: 'hsl(357, 63%, 56%)',
-			nodejs: 'hsl(80, 100%, 37%)',
-			node: 'hsl(80, 100%, 37%)',
-			npm: 'hsl(357, 70%, 44%)',
-			rails: 'hsl(0, 100%, 40%)',
-			ruby: 'hsl(2, 63%, 48%)',
-			shell: 'hsl(0, 0%, 0%)',
-			zsh: 'hsl(66, 100%, 42%)',
-			python: 'hsl(48, 100%, 67%)',
-			vim: 'hsl(120, 100%, 25%)',
-			yarn: 'hsl(198, 61%, 45%)',
+		// hyper-tab-icons
+		tabIcons: {
+			activeStyle: {
+				display      : 'inline-block',
+				marginRight  : '0.25rem',
+				transition   : 'opacity 200ms ease-in',
+				verticalAlign: 'middle',
+				width        : '1rem',
+			},
+			inactiveStyle: {
+				opacity: 0.5,
+			},
+			// mapIcons: {
+			// 	nodejs: ['node'],
+			// 	docker: ['docker-compose'],
+			// },
+			// disableColors: 'false',
+			mapColors: {
+				bash            : 'hsl(127, 49%, 46%)',
+				docker          : 'hsl(194, 88%, 49%)',
+				'docker-compose': 'hsl(194, 88%, 49%)',
+				fish            : 'hsl(357, 63%, 56%)',
+				nodejs          : 'hsl(80, 100%, 37%)',
+				node            : 'hsl(80, 100%, 37%)',
+				npm             : 'hsl(357, 70%, 44%)',
+				rails           : 'hsl(0, 100%, 40%)',
+				ruby            : 'hsl(2, 63%, 48%)',
+				shell           : 'hsl(0, 0%, 0%)',
+				zsh             : 'hsl(66, 100%, 42%)',
+				python          : 'hsl(48, 100%, 67%)',
+				vim             : 'hsl(120, 100%, 25%)',
+				yarn            : 'hsl(198, 61%, 45%)',
+			}
 		}
-	}
 
 	},
 
 
 
-
-
 	// # Plugins
 
-	// a list of plugins to fetch and install from npm
-	// format: [@org/]project[#version]
-	// examples:
+	// A list of plugins to fetch and install from npm.
+	// Format: [@org/]project[#version]
+	// Examples:
 	//	 `hyperpower`
 	//	 `@company/project`
 	//	 `project#1.0.1`
 	plugins: [
 
 		// ## Plugins: Behavior
-
 		'hyper-broadcast',
-		// extension for Hyper.app to broadcast user inputs to multiple terms.
-		//
-		// notes:
-		// you can enable broadcast individually or across all sessions simultaneously.
-		//
+		// Type across multiple panes and windows.
 		// https://www.npmjs.com/package/hyper-broadcast
 
-		// 'hyper-pane',
-		// extension for Hyper to enhance pane navigation.
-		// navigate through panes with arrows, jump directly to a specific pane with digit, change focus on mouse hover or temporarily maximize a pane.
+		'hyper-pane',
+		// Add keyboard shortcuts to focus on other panes, focus on mouseover and maximize panes.
 		// https://www.npmjs.com/package/hyper-pane
 
-		'hyperterm-paste',
-		// Makes pasting into hyperterm safe and easy
-		//
+		'hyperterm-paste', //
+		// Safely paste commands.
 		// https://www.npmjs.com/package/hyperterm-paste
 
 		'hyper-search',
-		// extension for Hyper that allows you to search text in your terminal.
+		// Search for text within active Terminal pane.
 		// https://www.npmjs.com/package/hyper-search
 
 		'hyperwakatime',
-				// hyperterm plugin for Wakatime
-				//
-				// notes:
-				// this plugin uses the standard Wakatime dotfiles most other editors use.
-				//
-				// https://www.npmjs.com/package/hyperwakatime
+		// Track Terminal use to Wakatime using the standard .dotfile token.
+		// https://www.npmjs.com/package/hyperwakatime
 
-
+		"hyper-confirm",
+		// Asks for confirmation before quiting Hyper.
+		// https://www.npmjs.com/package/hyper-confirm
 
 		// ## Plugins: UI
-
 		'hyper-always-on-top',
-		// extension for Hyper.app to add a menu item to keep application windows always on top.
+		// Add a menu item to keep application windows always on top.
 		// https://www.npmjs.com/package/hyper-always-on-top
 
-		// 'hyper-tabs-enhanced',
-		// enhanced tabs plugin for Hyper. matches any theme.
-		// https://www.npmjs.com/package/hyper-tabs-enhanced
-
-		// 'hyperterm-overlay',
-		// a complete and customizable solution for a permanent / dropdown / hotkey / overlay window in your Hyper, accessible via hotkeys and/or toolbar icon (tray).
+		'hyperterm-overlay',
+		// A complete and customizable solution for a permanent / dropdown / hotkey / overlay window in your Hyper, accessible via hotkeys and/or toolbar icon (tray).
 		// https://www.npmjs.com/package/hyperterm-overlay
 
 		'hyper-statusline',
-		// status line plugin for Hyper. shows clickable & useful information. matches any theme.”
+		// Status line plugin for Hyper. shows clickable & useful information. matches any theme.”
 		// https://www.npmjs.com/package/hyper-statusline
 
-		// 'hyper-tabs-enhanced',
-		// enhanced tabs plugin for Hyper. matches any theme.
-		// https://www.npmjs.com/package/hyper-tabs-enhanced
-
 		'hyper-tab-icons',
-		// icons in the header tabs for the current running process in Hyper.
+		// Icons in the header tabs for the current running process in Hyper.
 		// https://www.npmjs.com/package/hyper-tab-icons
 
+		"hypercwd",
+		// Opens new tabs in current directory.
+		// https://www.npmjs.com/package/hypercwd
 	],
-
-
 
 
 
@@ -411,12 +359,10 @@ module.exports = {
 
 
 
-
-
 	// # Keymaps
 
 	keymaps: {
-	// Example
-	// 'window:devtools': 'cmd+alt+o',
+		// Example
+		// 'window:devtools': 'cmd+alt+o',
 	},
 };

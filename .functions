@@ -119,6 +119,11 @@ wmd () {
 # Three functions that take a path and symlinks them into `~/Library/Application Support`, `~/Library/Containers` and `~/Library/Preferences`
 
 # syma() Symlink to Application Directory
+function syms() {
+	ln -s "$@" "$HOME/Library/Application Scripts"
+}
+
+# syma() Symlink to Application Directory
 function syma() {
 	ln -s "$@" "$HOME/Library/Application Support"
 }
@@ -129,7 +134,7 @@ function symc() {
 }
 
 # symp() Symlink to Preferences
-function symc() {
+function symp() {
 	ln -s "$@" "$HOME/Library/Preferences"
 }
 

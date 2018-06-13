@@ -45,7 +45,7 @@ fi;
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2- | tr ' ' '\n')" scp sftp ssh;
 
-# Add tab completion for `defaults read|write NSGlobalDomain`
+# Add tab completion for `defaults read|w~~rite NSGlobalDomain`
 # You could just use `-g` instead, but I like being explicit
 complete -W "NSGlobalDomain" defaults;
 
@@ -58,6 +58,21 @@ complete -o "nospace" -W "1Password 'Affinity Designer' 'Affinity Photo' Airmail
 
 # # Utility Helpers
 
+# Color LS
+# https://github.com/athityakumar/colorls
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+# Basher
+# https://github.com/basherpm/basher
+eval "$(basher init -)"
+~
 # fasd
 # https://github.com/clvv/fasd
 eval "$(fasd --init auto)"
+
+# The Fuck
+# https://github.com/nvbn/thefuck#manual-installation
+eval $(thefuck --alias)
+
+# swiftenv
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
