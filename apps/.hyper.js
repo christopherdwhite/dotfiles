@@ -225,21 +225,24 @@ module.exports = {
 
 		// hyperterm-overlay
 		overlay: {
-			alwaysOnTop   : false,    // Makes Hyperterm Overlay window stay always on top. default: `true`.
-			animate       : false,    // Enable animation when show and hide the window. default: `true`.
-			hasShadow     : true,     // Controls the default macOS window shadows. default: `false`.
-			hideDock      : false,    // Removes the Hyper dock icon. It works only when the unique option is activated. default: `false`.
-			hideOnBlur    : false,    // Hides the Hyperterm Overlay when it loses focus. default: `false`.
-			position      : 'left',   // Choose where Hyperterm Overlay will be positioned: top, bottom, left or right. default: `top`.
-			primaryDisplay: false,    // Show Hyperterm Overlay only on primary display. default: `false`.
-			resizable     : false,    // Allow the Hyperterm Overlay be resizable. default: `false`.
-			startAlone    : true,     // Makes HyperTerm Overlay the unique window displayed when started. default: `false`.
-			startup       : true,     // Open HyperTerm Overlay on Hyper startup. default: `true`.
-			tray          : false,    // Add icon to the system notification area, for access HyperTerm Overlay. default: `true`.
-			unique        : false,    // Makes HyperTerm Overlay the unique window of Hyper. any other window will be removed. default: `false`.
+			alwaysOnTop   : false,     // Makes Hyperterm Overlay window stay always on top. default: `true`.
+			animate       : false,     // Enable animation when show and hide the window. default: `true`.
+			hasShadow     : true,      // Controls the default macOS window shadows. default: `false`.
+			hideDock      : false,     // Removes the Hyper dock icon. It works only when the unique option is activated. default: `false`.
+			hideOnBlur    : false,     // Hides the Hyperterm Overlay when it loses focus. default: `false`.
+			position      : 'right',   // Choose where Hyperterm Overlay will be positioned: top, bottom, left or right. default: `top`.
+			primaryDisplay: false,     // Show Hyperterm Overlay only on primary display. default: `false`.
+			resizable     : false,     // Allow the Hyperterm Overlay be resizable. default: `false`.
+			startAlone    : false,     // Makes HyperTerm Overlay the unique window displayed when started. default: `false`.
+			startup       : true,      // Open HyperTerm Overlay on Hyper startup. default: `true`.
+			tray          : false,     // Add icon to the system notification area, for access HyperTerm Overlay. default: `true`.
+			unique        : false,     // Makes HyperTerm Overlay the unique window of Hyper. any other window will be removed. default: `false`.
 
 			// Specify one or more hotkeys to show and hide the HyperTerm Overlay (see: Accelerator documentation). default: `['Option+Space']`
-			hotkeys: ['Control+Option+Shift+F6'],
+			hotkeys: {
+				open : ['Control+Option+Shift+F6'],
+				close: ['Control+Option+Shift+F6'],
+			},
 
 			// The size of HyperTerm Overlay when it is showing. The possible values are a `number` or a `float`. If is is a number, it represents the size im pixels. Otherwise, if it is a float, it means the percentage of the screen.
 			size: 0.5,
@@ -302,11 +305,11 @@ module.exports = {
 	plugins: [
 
 		// ## Plugins: Behavior
-		'hyper-broadcast',
+		// 'hyper-broadcast',
 		// Type across multiple panes and windows.
 		// https://www.npmjs.com/package/hyper-broadcast
 
-		'hyper-pane',
+		// 'hyper-pane',
 		// Add keyboard shortcuts to focus on other panes, focus on mouseover and maximize panes.
 		// https://www.npmjs.com/package/hyper-pane
 
@@ -318,20 +321,24 @@ module.exports = {
 		// Search for text within active Terminal pane.
 		// https://www.npmjs.com/package/hyper-search
 
-		'hyperwakatime',
+		// 'hyperwakatime',
 		// Track Terminal use to Wakatime using the standard .dotfile token.
 		// https://www.npmjs.com/package/hyperwakatime
 
-		"hyper-confirm",
+		// "hyper-confirm",
 		// Asks for confirmation before quiting Hyper.
 		// https://www.npmjs.com/package/hyper-confirm
 
 		// ## Plugins: UI
-		'hyper-always-on-top',
+		// 'hyper-always-on-top',
 		// Add a menu item to keep application windows always on top.
 		// https://www.npmjs.com/package/hyper-always-on-top
 
-		'hyperterm-overlay',
+		// "hyper-font-smoothing",
+		// Extension for subpixel-antialiased font smoothing in Hyper
+		// https://www.npmjs.com/package/hyper-font-smoothing
+
+		'hyper-overlay',
 		// A complete and customizable solution for a permanent / dropdown / hotkey / overlay window in your Hyper, accessible via hotkeys and/or toolbar icon (tray).
 		// https://www.npmjs.com/package/hyperterm-overlay
 
